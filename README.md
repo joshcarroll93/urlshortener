@@ -11,7 +11,7 @@ This is a Spring MVC application using mySQL database.
 2. Once Project is built and running go to localhost:8080 on your browser.
 3. Enter any URL and get a short URL returned which will redirect you to the original URL.
 
-# TO-D0
+# TO-DO
 1. Read database connection string from application properties.
 2. Deploy the database with project.
 3. Containerise application.

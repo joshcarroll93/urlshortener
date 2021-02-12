@@ -69,7 +69,7 @@ public class ShortURLController {
     public void setShortUrl(URLMap URLMap) {
 
         String shortPath = createShortUrlPath();
-        URLMap.setShortUrl(shortPath);
+        URLMap.setShortUrl("short.url/"+shortPath);
         urlRepository.save(URLMap);
     }
 

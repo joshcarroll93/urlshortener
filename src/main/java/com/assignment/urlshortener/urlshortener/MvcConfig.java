@@ -9,7 +9,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import javax.sql.DataSource;
 
-//
 @Configuration
 @EnableWebMvc
 public class MvcConfig implements WebMvcConfigurer {
@@ -21,21 +20,21 @@ public class MvcConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-
         if (!registry.hasMappingForPattern("/**")) {
             registry.addResourceHandler("/**").addResourceLocations(
                     CLASSPATH_RESOURCE_LOCATIONS);
         }
-
     }
 
     @Bean
     public DataSource getDataSource() {
         DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create();
         dataSourceBuilder.driverClassName("com.mysql.cj.jdbc.Driver");
-        dataSourceBuilder.url("jdbc:mysql://localhost:3306/URLDB");
+//        dataSourceBuilder.url("jdbc:mysql://localhost:3306/URLDB");
+        dataSourceBuilder.url("jdbc:mysql://0.0.0.0:3310/URLDB");
         dataSourceBuilder.username("root");
-        dataSourceBuilder.password("josh123");
+        dataSourceBuilder.password("password");
+//        dataSourceBuilder.password("josh123");
         return dataSourceBuilder.build();
     }
 }
